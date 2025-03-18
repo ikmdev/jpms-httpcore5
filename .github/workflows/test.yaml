@@ -36,8 +36,8 @@ jobs:
       - name: Update Release Candidate Property
         run: |
           mvn versions:set-property \
-            -D'property=core.artifact.release' \
-            -D'newVersion=$RELEASE_PROPERTY
+            -Dproperty=core.artifact.release \
+            -DnewVersion=$RELEASE_PROPERTY
              git config user.name "ikmdevops"
              git config user.email ${{ inputs.ikmdevops_email }}
              git pull -p
