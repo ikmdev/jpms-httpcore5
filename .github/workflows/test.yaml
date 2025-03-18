@@ -32,7 +32,8 @@ jobs:
                fi
              done
             echo "$RELEASE_PROPERTY"
-            echo "PROPERTY=$RELEASE_PROPERTY" >> $GITHUB_ENV
+            echo "::set-output name=PROPERTY::$RELEASE_PROPERTY"
+            # echo "PROPERTY=$RELEASE_PROPERTY" >> $GITHUB_ENV
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
 
