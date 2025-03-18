@@ -21,8 +21,11 @@ jobs:
 
       - name: Get Stuff
         run: |
-           while IFS='-' read -ra VERSION; do
-              printf '%s\n' "${VERSION[@]}"
-           done
+           IFS='-'
+           read -ra arr <<< "$VERSION"
+           for val in "${arr[@]}"
+             do
+               print "$val\n"
+             done
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
