@@ -68,7 +68,8 @@ jobs:
              git config user.name "ikmdevops"
              git config user.email "devops@ikm.dev"
              git pull -p
-             git commit -am"Updated Release core.artifact.release Property to $RELEASE_PROPERTY"
+             git commit -am"Updated Release Candidate to $RELEASE_PROPERTY"
              git push
         env:
          RELEASE_PROPERTY: ${{steps.new_release_property.outputs.PROPERTY}}
+      
