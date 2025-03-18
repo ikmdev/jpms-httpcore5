@@ -27,7 +27,7 @@ jobs:
            for val in "${arr[@]}"
              do
                if [[ $val == r* ]]; then
-                   echo RELEASE_PROPERTY=$val
+                   echo "RELEASE_PROPERTY=$val"
                fi
              done
             echo "$RELEASE_PROPERTY"
