@@ -42,11 +42,13 @@ jobs:
           mvn versions:set-property \
             -Dproperty=core.artifact.release \
             -DnewVersion=$RELEASE_PROPERTY
+        env:
+         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.PROPERTY}}
+
+      - name: Push Update Release Candidate Property
+        run: |
              git config user.name "ikmdevops"
              git config user.email ${{ inputs.ikmdevops_email }}
              git pull -p
              git commit -am"Updated Release Candidate to $RELEASE_PROPERTY"
              git push
-        env:
-         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.PROPERTY}}
-         
