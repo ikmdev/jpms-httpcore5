@@ -19,13 +19,29 @@ jobs:
         id: getVersion
         run: echo "CURRENT_VERSION=$(mvn help:evaluate -D'expression=project.version' -q -D'forceStdout')" >> $GITHUB_OUTPUT
 
-      - name: Get Stuff
+      - name: New Release Property
+        id: new_release_property
         run: |
            IFS='-'
            read -ra arr <<< "$VERSION"
            for val in "${arr[@]}"
              do
-               printf "$val\n"
+               if [[ $val == r* ]] ; then
+                   echo "NEW_RELEASE_PROPERTY=$val" >> $GITHUB_OUTPUT
              done
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
+
+      - name: Update Release Candidate Property
+        run: |
+          mvn versions:set-property \
+            -D'property=core.artifact.release' \
+            -D'newVersion=$RELEASE_PROPERTY
+             git config user.name "ikmdevops"
+             git config user.email ${{ inputs.ikmdevops_email }}
+             git pull -p
+             git commit -am"Updated Release Candidate to $RELEASE_PROPERTY"
+             git push
+        env:
+         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.NEW_RELEASE_PROPERTY}}
+         
