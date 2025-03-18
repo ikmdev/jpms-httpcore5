@@ -31,7 +31,7 @@ jobs:
                fi
              done
             echo "$RELEASE_PROPERTY"
-            echo "NEW_RELEASE_PROPERTY=$RELEASE_PROPERTY" >> $GITHUB_OUTPUT
+            echo "PROPERTY=$RELEASE_PROPERTY" >> $GITHUB_OUTPUT
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
 
@@ -46,5 +46,5 @@ jobs:
              git commit -am"Updated Release Candidate to $RELEASE_PROPERTY"
              git push
         env:
-         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.NEW_RELEASE_PROPERTY}}
+         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.PROPERTY}}
          
