@@ -21,6 +21,7 @@ jobs:
 
       - name: New Release Property
         id: new_release_property
+        shell: bash
         run: |
            IFS='-'
            read -ra arr <<< "$VERSION"
