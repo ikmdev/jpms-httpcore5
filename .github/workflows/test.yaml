@@ -26,8 +26,9 @@ jobs:
            read -ra arr <<< "$VERSION"
            for val in "${arr[@]}"
              do
-               if [[ $val == r* ]] ; then
+               if [[ $val == r* ]]; then
                    echo "NEW_RELEASE_PROPERTY=$val" >> $GITHUB_OUTPUT
+               fi
              done
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
