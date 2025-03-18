@@ -22,7 +22,7 @@ jobs:
       - name: Get Stuff
         run: |
            while IFS='-' read -ra $VERSION; do
-              printf('%s\n' "${$VERSION[@]}"
+              printf '%s\n' "${$VERSION[@]}"
            done
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
