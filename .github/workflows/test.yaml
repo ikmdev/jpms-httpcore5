@@ -1,6 +1,6 @@
-name: Build Workflow
+name: Test Workflow
 
-run-name: 'Build Workflow -- ${{ github.head_ref || github.ref_name }}'
+run-name: 'Test Workflow -- ${{ github.head_ref || github.ref_name }}'
 
 # Pipeline/Workflow Triggers
 on:
