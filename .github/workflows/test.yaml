@@ -30,8 +30,8 @@ jobs:
                    echo RELEASE_PROPERTY=$val
                fi
              done
-             echo "$RELEASE_PROPERTY"
-             echo "NEW_RELEASE_PROPERTY=$RELEASE_PROPERTY" >> $env:GITHUB_OUTPUT
+            echo "$RELEASE_PROPERTY"
+            echo "NEW_RELEASE_PROPERTY=$RELEASE_PROPERTY" >> $GITHUB_OUTPUT
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
 
