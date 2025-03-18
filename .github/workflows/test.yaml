@@ -25,7 +25,7 @@ jobs:
            read -ra arr <<< "$VERSION"
            for val in "${arr[@]}"
              do
-               print "$val\n"
+               printf "$val\n"
              done
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
