@@ -27,9 +27,10 @@ jobs:
            for val in "${arr[@]}"
              do
                if [[ $val == r* ]]; then
-                   echo "NEW_RELEASE_PROPERTY=$val" >> $GITHUB_ENV
+                   echo RELEASE_PROPERTY=$val
                fi
              done
+             echo "NEW_RELEASE_PROPERTY=RELEASE_PROPERTY" >> $GITHUB_OUTPUT
         env:
           VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
 
@@ -44,5 +45,5 @@ jobs:
              git commit -am"Updated Release Candidate to $RELEASE_PROPERTY"
              git push
         env:
-         RELEASE_PROPERTY: ${{env.NEW_RELEASE_PROPERTY}}
+         RELEASE_PROPERTY: ${{steps.new_release_property.outputs.NEW_RELEASE_PROPERTY}}
          
