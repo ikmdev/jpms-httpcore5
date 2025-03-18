@@ -1,0 +1,28 @@
+name: Build Workflow
+
+run-name: 'Build Workflow -- ${{ github.head_ref || github.ref_name }}'
+
+# Pipeline/Workflow Triggers
+on:
+    workflow_dispatch:
+
+
+jobs:
+  test:
+    name: Testing
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Get Version
+        id: getVersion
+        run: echo "CURRENT_VERSION=$(mvn help:evaluate -D'expression=project.version' -q -D'forceStdout')" >> $GITHUB_OUTPUT
+
+      - name: Get Stuff
+        run: |
+           while IFS='-' read -ra VERSION; do
+              printf('%s\n' "${VERSION[@]}"
+           done
+        env:
+          VERSION: ${{steps.getVersion.outputs.CURRENT_VERSION}}
