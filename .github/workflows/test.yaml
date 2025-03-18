@@ -17,7 +17,7 @@ jobs:
 
       - name: Get Version
         id: getVersion
-        run: echo "CURRENT_VERSION=$(mvn help:evaluate -D'expression=project.version' -q -D'forceStdout')" >> $env:$GITHUB_OUTPUT
+        run: echo "CURRENT_VERSION=$(mvn help:evaluate -D'expression=project.version' -q -D'forceStdout')" >> $GITHUB_OUTPUT
 
       - name: New Release Property
         id: new_release_property
@@ -27,7 +27,7 @@ jobs:
            for val in "${arr[@]}"
              do
                if [[ $val == r* ]]; then
-                   echo "NEW_RELEASE_PROPERTY=$val" >> $GITHUB_OUTPUT
+                   echo "NEW_RELEASE_PROPERTY=$val" >> $env:GITHUB_OUTPUT
                fi
              done
         env:
