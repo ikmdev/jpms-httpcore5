@@ -8,7 +8,7 @@
 <!-- ====================================================================== -->
 <!--                                                                        -->
 <!-- Effective POM for project                                              -->
-<!-- 'dev.ikm.jpms:httpcore5:jar:5.3.3-r2-SNAPSHOT'                         -->
+<!-- 'dev.ikm.jpms:httpcore5:jar:5.3.4-r4-SNAPSHOT'                         -->
 <!--                                                                        -->
 <!-- ====================================================================== -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,7 +21,7 @@
   </parent>
   <groupId>dev.ikm.jpms</groupId>
   <artifactId>httpcore5</artifactId>
-  <version>5.3.3-r2-SNAPSHOT</version>
+  <version>5.3.4-r4-SNAPSHOT</version>
   <description>Builds the httpcore5.</description>
   <url>http://www.ikm.dev/httpcore5</url>
   <inceptionYear>2015</inceptionYear>
@@ -51,8 +51,8 @@
   </issueManagement>
   <properties>
     <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
-    <core.artifact.release>r2</core.artifact.release>
-    <core.artifact.version>5.3.3</core.artifact.version>
+    <core.artifact.release>r4</core.artifact.release>
+    <core.artifact.version>5.3.4</core.artifact.version>
     <java.version>23</java.version>
     <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
     <maven-license-plugin.version>4.1</maven-license-plugin.version>
@@ -98,6 +98,9 @@
   </repositories>
   <pluginRepositories>
     <pluginRepository>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -126,7 +129,7 @@
       </testResource>
     </testResources>
     <directory>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target</directory>
-    <finalName>httpcore5-5.3.3-r2-SNAPSHOT</finalName>
+    <finalName>httpcore5-5.3.4-r4-SNAPSHOT</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -349,13 +352,13 @@
                 <artifactItem>
                   <groupId>org.apache.httpcomponents.core5</groupId>
                   <artifactId>httpcore5</artifactId>
-                  <version>5.3.3</version>
+                  <version>5.3.4</version>
                   <classifier>sources</classifier>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.apache.httpcomponents.core5</groupId>
                   <artifactId>httpcore5</artifactId>
-                  <version>5.3.3</version>
+                  <version>5.3.4</version>
                   <classifier>javadoc</classifier>
                 </artifactItem>
               </artifactItems>
@@ -377,12 +380,12 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.3-sources.jar</file>
+                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.4-sources.jar</file>
                   <type>jar</type>
                   <classifier>sources</classifier>
                 </artifact>
                 <artifact>
-                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.3-javadoc.jar</file>
+                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.4-javadoc.jar</file>
                   <type>jar</type>
                   <classifier>javadoc</classifier>
                 </artifact>
@@ -410,7 +413,7 @@
                   <artifact>
                     <groupId>org.apache.httpcomponents.core5</groupId>
                     <artifactId>httpcore5</artifactId>
-                    <version>5.3.3</version>
+                    <version>5.3.4</version>
                   </artifact>
                   <moduleInfo>
                     <name>dev.ikm.jpms.httpcore5</name>
@@ -436,7 +439,7 @@
             <configuration>
               <target>
                 <echo message="renaming sources file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.3-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/httpcore5-5.3.3-r2-SNAPSHOT-sources.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.4-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/httpcore5-5.3.4-r4-SNAPSHOT-sources.jar" />
               </target>
             </configuration>
           </execution>
@@ -449,7 +452,7 @@
             <configuration>
               <target>
                 <echo message="renaming javadoc file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.3-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/httpcore5-5.3.3-r2-SNAPSHOT-javadoc.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/dependency/httpcore5-5.3.4-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/httpcore5-5.3.4-r4-SNAPSHOT-javadoc.jar" />
               </target>
             </configuration>
           </execution>
@@ -461,7 +464,7 @@
             <configuration>
               <target>
                 <echo message="unzipping files" />
-                <unzip src="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/moditect/httpcore5-5.3.3.jar" dest="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/classes/">
+                <unzip src="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/moditect/httpcore5-5.3.4.jar" dest="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-httpcore5\target/classes/">
                   <patternset>
                     <exclude name="**/MANIFEST.MF" />
                   </patternset>
@@ -506,7 +509,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.3.0</version>
         <executions>
           <execution>
             <id>default-jar</id>
@@ -519,7 +522,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
+        <version>3.11.0</version>
         <executions>
           <execution>
             <id>default-compile</id>
@@ -539,7 +542,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
+        <version>3.1.2</version>
         <executions>
           <execution>
             <id>default-test</id>
